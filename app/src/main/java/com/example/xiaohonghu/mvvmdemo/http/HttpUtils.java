@@ -29,6 +29,7 @@ public class HttpUtils {
     private static RetrofitInterface retrofitInterface;
 
 
+    //用于登录注册的功能
     private synchronized static RetrofitInterface getRetrofit() {
         //初始化retrofit的配置
         if (retrofit == null) {
@@ -43,6 +44,24 @@ public class HttpUtils {
         return retrofitInterface;
     }
 
+
+    //用于获取知乎日报的内容
+    private synchronized static RetrofitInterface getNewsRetrofit() {
+        //初始化retrofit的配置
+        if (retrofit == null) {
+            retrofit = new Retrofit.Builder()
+                    .baseUrl(UrlConstant.URL_BASE)
+                    .client(client)
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+                    .build();
+            retrofitInterface = retrofit.create(RetrofitInterface.class);
+        }
+        return retrofitInterface;
+    }
+
+
+
     //注册
     public static Observable<BaseBean> getSignUpData(String phone,String password,String verification) {
         return getRetrofit().getSignUpData(phone,password,verification);
@@ -56,5 +75,6 @@ public class HttpUtils {
     //登录账号
     public static Observable<UserInfoBean> getSignInData(String phone, String password) {
         return getRetrofit().getSignInData(phone,password);
+
     }
 }

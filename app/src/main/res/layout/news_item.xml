@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+    <data>
+        <import type="com.example.xiaohonghu.mvvmdemo.R" />
+        <variable
+            name="itembean"
+            type="com.example.xiaohonghu.mvvmdemo.bean.StoriesBean"/>
+
+        <variable
+            name="position"
+            type="int" />
+    </data>
+<LinearLayout
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+</LinearLayout>
+</layout>

@@ -8,6 +8,8 @@ public class UrlConstant {
     //地址头部
 //    public static final String URL_BASE = "http://192.168.1.201:8070/";//内部地址，只能内网用
     public static final String URL_BASE = " http://www.lichenjy.com/";
+    //知乎头部地址
+    public static final String URL_ZHIhHU_BASE = " http://news-at.zhihu.com/api/7/";
 
     //注册账号
     public static final String SIGNUP_PATH = "appConsulting/register/";
